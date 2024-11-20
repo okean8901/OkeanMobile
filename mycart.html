@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome-free-6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="mycart.css">
+    <script src="mycart.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="picture/logo.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="brand-name">
+            <h1>Okean Mobile</h1>
+        </div>
+        <input type="text" class="search-bar" placeholder="SEARCH">
+        <div class="header-buttons">
+            <button class="btn">Login</button>
+            <button class="btn">Register</button>
+            <button class="btn">NEWS</button>
+            <button class="btn">EVENT</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="cart-title">MY CART</div>
+        
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Unit price</th>
+                    <th>Quantity</th>
+                    <th>Total amount</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <div class="product-image"></div>
+                            <div>Product name</div>
+                        </div>
+                    </td>
+                    <td>x.xxx.xxx</td>
+                    <td>1</td>
+                    <td>x.xxx.xxx</td>
+                    <td><button class="btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <div class="product-image"></div>
+                            <div>Product name</div>
+                        </div>
+                    </td>
+                    <td>x.xxx.xxx</td>
+                    <td>1</td>
+                    <td>x.xxx.xxx</td>
+                    <td><button class="btn">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <div>Total cost of goods : x.xxx.xxx</div>
+            <button class="btn">Complete</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <span>
+                <h2><i class="fa-solid fa-location-dot"></i> Store system</h2>
+                <h3>Ha Noi</h3>
+                <p>120 Thai Ha, Dong Da District
+                    Phone: 0969.120.120 - 037.437.9999</p>
+                <p>398 Cau Giay, Cau Giay District
+                    Phone: 096.1111.398 - 037.437.9999</p>
+                <p>42 Pho Vong, Hai Ba Trung
+                    Phone: 0979.884242 - 037.437.9999</p>
+                <h3>Ho Chi Minh</h3>
+                <p>123 Tran Quang Khai, District 1
+                    Phone: 0965.123.123 - 0969.520.520</p>
+                <p>602 Le Hong Phong, Ward 10, District 10
+                    Phone: 097.1111.602 - 097.3333.602</p>
+            </span>
+            <span>
+                <h2><i class="fa-solid fa-pen"></i> Rules - Policies</h2>
+                <ul>
+                    <li>Warranty Policy</li>
+                    <li>Shipping Policy</li>
+                    <li>Return Policy</li>
+                    <li>Information Security Policy</li>
+                    <li>Payment Instructions</li>
+                    <li>Online Shopping Instructions</li>
+                    <li>Nationwide COD Shipping Service</li>
+                    <li>Parts and Accessories Dealer Policy</li>
+                </ul>
+            </span>
+            <span>
+                <h2><i class="fa-solid fa-link"></i>About us</h2>
+                <div class="social-icons">
+                    <div class="social-icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-tiktok"></i></div>
+                    <div class="social-icon"><i class="fa-brands fa-twitter"></i></div>
+                </div>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>

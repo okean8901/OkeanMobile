@@ -1,0 +1,558 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    position: relative;
+    background: none;
+    min-height: 100vh;
+    color: #fff;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('picture/backgoundasm.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(0.8);
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Container Styles */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo {
+    border: 5px solid #03e9f4;
+    border-radius: 50%;
+    padding: 5px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Brand Name Styles */
+.brand-name {
+    margin-right: 20px;
+}
+
+.brand-name h1 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    white-space: nowrap;
+}
+
+.brand-name h1:hover {
+    transform: scale(1.05);
+}
+
+/* Search Bar Styles */
+.search-bar {
+    flex-grow: 1;
+    margin: 0 2rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #03e9f4;
+    box-shadow: 0 0 15px rgba(3, 233, 244, 0.2);
+}
+
+/* Nav Buttons Styles */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-buttons button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    border: none;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(3, 233, 244, 0.3);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #03e9f4;
+}
+.update-info{
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    border: none;
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+.update-info:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(3, 233, 244, 0.3);
+}
+
+/* Rest of your existing CSS remains the same */
+
+/* Navbar Responsive Styles */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-buttons {
+        gap: 0.5rem;
+    }
+
+    .nav-buttons button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .search-bar {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 10px 15px;
+        gap: 10px;
+    }
+
+    .logo-container {
+        margin-right: 10px;
+    }
+
+    .brand-name h1 {
+        font-size: 20px;
+    }
+
+    .search-bar {
+        order: 3;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .nav-buttons {
+        order: 2;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .nav-buttons button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-width: 3px;
+    }
+
+    .brand-name h1 {
+        font-size: 18px;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        justify-content: center;
+        gap: 0.25rem;
+    }
+
+    .nav-buttons button {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+
+    .search-bar input {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    /* Add this if you want to show nav buttons in a dropdown */
+    .nav-buttons.show {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .nav-buttons.show button {
+        width: 100%;
+    }
+}
+/* Main Content Styles */
+.main-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 90px auto 0;
+}
+
+.client-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.client-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+}
+
+.profile-image svg {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.client-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #03e9f4;
+    font-size: 24px;
+}
+
+.profile-info div {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-info div:hover {
+    border-bottom-color: #03e9f4;
+}
+
+.account-info {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+.account-info h2 {
+    margin-bottom: 2rem;
+    color: #fff;
+    font-size: 28px;
+    text-align: center;
+    background: linear-gradient(45deg, #ffffff, #00c5fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-bottom-color: #03e9f4;
+}
+
+/* Special styling for date input */
+.form-group input[type="date"] {
+    color-scheme: dark;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+.footer {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 3rem 4rem;
+    margin-top: 8rem;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(3, 233, 244, 0.2);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.footer-links span {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-links h2 {
+    color: #03e9f4;
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-links h2 i {
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-links h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.footer-links p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links p:hover {
+    color: #fff;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links ul li::before {
+    content: "→";
+    margin-right: 0.5rem;
+    color: #03e9f4;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.footer-links ul li:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.footer-links ul li:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* About Us Section with Social Icons */
+.footer-links span:last-child {
+    gap: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(3, 233, 244, 0.1);
+    border: 1px solid rgba(3, 233, 244, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-icon i {
+    font-size: 1.2rem;
+    color: #03e9f4;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    border-color: transparent;
+    box-shadow: 0 5px 15px rgba(3, 233, 244, 0.3);
+}
+
+.social-icon:hover i {
+    color: #fff;
+}
+
+@media (max-width: 992px) {
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-links span:last-child {
+        grid-column: span 2;
+    }
+    
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-links span:last-child {
+        grid-column: auto;
+    }
+    
+    .social-icons {
+        justify-content: flex-start;
+    }
+}

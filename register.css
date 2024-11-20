@@ -1,0 +1,280 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background: none;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('picture/backgoundasm.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    filter: brightness(0.8);
+}
+
+/* Header Styles */
+.site-header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    border: 5px solid #03e9f4; /* Màu viền */
+    border-radius: 50%; /* Bo góc */
+    padding: 5px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    width: 100%; /* Đảm bảo hình ảnh có kích thước linh hoạt */
+    max-width: 50px; /* Kích thước tối đa */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.brand-name {
+    text-align: right;
+}
+
+.brand-name h1 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.brand-name h1:hover {
+    transform: scale(1.05);
+}
+
+/* Register Box Styles */
+.register-box {
+    max-height: 700px;
+    position: relative;
+    width: 400px;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    margin: 90px 20px 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.register-box:hover {
+    transform: translateY(-5px);
+}
+
+.register-box h2 {
+    margin: 0 0 30px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #ffffff, #00c5fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.user-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.user-box input:focus {
+    border-bottom-color: #03e9f4;
+}
+
+.user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.user-box input:focus ~ label,
+.user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Special styling for date input */
+.user-box input[type="date"] {
+    color-scheme: dark;
+}
+
+.user-box input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.check-box {
+    margin: 20px 0;
+}
+
+.check-box div {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.check-box input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.check-box label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.check-box label:hover {
+    color: #03e9f4;
+}
+
+.register-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(3, 233, 244, 0.2);
+}
+
+.register-button:hover {
+    background: linear-gradient(45deg, #00c6fb, #03e9f4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(3, 233, 244, 0.3);
+}
+
+.register-button:active {
+    transform: translateY(0);
+}
+
+.have-an-account {
+    text-align: center;
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+.have-an-account a {
+    color: #03e9f4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.have-an-account a:hover {
+    color: #00c6fb;
+    text-decoration: underline;
+}
+.error-message {
+    color: red; /* Đặt màu chữ của thông báo lỗi là đỏ */
+    font-size: 0.875em; /* Kích thước chữ */
+    margin-top: 0.25em; /* Khoảng cách phía trên */
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    
+    .brand-name h1 {
+        font-size: 20px;
+    }
+    
+    .logo {
+        height: 40px;
+    }
+    
+    .register-box {
+        width: 90%;
+        padding: 30px 20px;
+        margin-top: 100px;
+    }
+    
+    .register-box h2 {
+        font-size: 24px;
+    }
+    
+    .user-box label {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okean Mobile - Registration</title>
+    <link rel="stylesheet" href="register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .error-message {
+            color: red; /* Đặt màu chữ của thông báo lỗi là đỏ */
+            font-size: 0.875em; /* Kích thước chữ */
+            margin-top: 0.25em; /* Khoảng cách phía trên */
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="picture/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="brand-name">
+                <h1>Okean Mobile</h1>
+            </div>
+        </div>
+    </header>
+    
+    <form class="register-box">
+        <h2>Registration</h2>
+        <!-- Username -->
+        <div class="user-box">
+            <input type="text" name="username" id="username" required>
+            <label>Username</label>
+            <p id="username-error" class="error-message"></p>
+        </div>
+        <!-- Password -->
+        <div class="user-box">
+            <input type="password" name="password" id="password" required>
+            <label>Password</label>
+            <p id="password-error" class="error-message"></p>
+        </div>
+        <!-- Email -->
+        <div class="user-box">
+            <input type="email" name="email" id="email" required>
+            <label>Email</label>
+            <p id="email-error" class="error-message"></p>
+        </div>
+        <!-- Phone Number -->
+        <div class="user-box">
+            <input type="tel" name="phonenumber" id="phonenumber" required>
+            <label>Phone Number</label>
+            <p id="phonenumber-error" class="error-message"></p>
+        </div>
+        <!-- Address -->
+        <div class="user-box">
+            <input type="text" name="address" id="address" required>
+            <label>Address</label>
+            <p id="address-error" class="error-message"></p>
+        </div>
+        <!-- Checkbox -->
+        <section class="check-box">
+            <div class="buyer">
+                <input type="checkbox" name="buyer" id="buyer">
+                <label for="buyer">I Will Be Buyer</label>
+            </div>
+            <div class="robot">
+                <input type="checkbox" name="robot" id="robot" required>
+                <label for="robot">I'm Not a Robot</label>
+            </div>
+        </section>
+
+        <button class="register-button" type="submit">Register</button>
+
+        <h5 class="have-an-account">
+            Already have an account? <a href="login.html"><b>Login</b></a>
+        </h5>
+    </form>
+
+    <script src="register.js" defer></script>
+</body>
+</html>

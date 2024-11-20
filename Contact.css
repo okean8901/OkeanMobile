@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  position: relative;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("picture/backgoundasm.jpg") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+
+/* Header and Navigation Styles */
+.header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #03e9f4;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.brand-name {
+  margin-right: auto;
+}
+
+.brand-name h1 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(45deg, #03e9f4, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.brand-name h1:hover {
+  transform: scale(1.05);
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #03e9f4, #00c6fb);
+  border: none;
+  color: #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(3, 233, 244, 0.3);
+}
+
+/* Responsive Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 4rem;
+}
+
+.contact-info {
+  text-align: left; /* Align all text in contact-info to the left */
+}
+
+.contact-info h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #03e9f4;
+  background: linear-gradient(45deg, #ffffff, #00c5fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-info p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 25px; /* Original style */
+  text-align: left; /* Align text to the left */
+}
+
+.contact-info a {
+  color: #03e9f4;
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+label {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+input,
+textarea {
+  padding: 0.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #03e9f4;
+  outline: none;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(45deg, #03e9f4, #00c6fb);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(3, 233, 244, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .header {
+      padding: 15px 20px;
+  }
+
+  .brand-name h1 {
+      font-size: 24px;
+  }
+
+  .btn {
+      padding: 8px 15px;
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+      padding: 10px 15px;
+  }
+
+  .brand-name h1 {
+      font-size: 20px;
+  }
+
+  .logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+  }
+
+  .contact-info h1 {
+      font-size: 2.5rem;
+  }
+
+  .contact-info p {
+      font-size: 25px; /* Maintain original size */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+      padding: 10px;
+  }
+
+  .brand-name h1 {
+      font-size: 18px;
+  }
+
+  .logo {
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+  }
+
+  .btn {
+      padding: 6px 12px;
+      font-size: 12px;
+  }
+
+  .contact-info h1 {
+      font-size: 2rem;
+  }
+
+  .contact-info p {
+      font-size: 20px; /* Slightly smaller for mobile */
+  }
+}
