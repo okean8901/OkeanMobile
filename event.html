@@ -1,0 +1,240 @@
+Okean Mobile Event Page
+Preview
+Code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okean Mobile - Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    * {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative;
+        background: none;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('picture/backgoundasm.jpg') no-repeat center center fixed;
+        background-size: cover;
+        z-index: -1;
+        filter: brightness(0.8);
+    }
+
+    .site-header {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        border: 5px solid #03e9f4;
+        border-radius: 50%;
+        padding: 5px;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 50px;
+        max-width: 50px;
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.05);
+    }
+
+    .brand-name h1 {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: linear-gradient(45deg, #03e9f4, #0069C6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .brand-name h1:hover {
+    transform: scale(1.05);
+}
+
+    .events-container {
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 100px;
+        padding: 0 30px;
+    }
+
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+    }
+
+    .event-card {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .event-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .event-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .event-card-content {
+        padding: 20px;
+        color: #fff;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .event-card-content h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        background: linear-gradient(45deg, #03e9f4, #0069C6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .event-card-content .event-details {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 15px;
+        flex-grow: 1;
+    }
+
+    .event-card-content .event-date {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #03e9f4;
+        margin-bottom: 10px;
+    }
+
+    .event-card-content .event-date i {
+        margin-right: 10px;
+    }
+
+    .event-card-content .register-btn {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(45deg, #03e9f4, #0069C6);
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: auto;
+    }
+
+    .event-card-content .register-btn:hover {
+        background: linear-gradient(45deg, #00c6fb, #0069C6);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(3, 233, 244, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .events-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="picture/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="brand-name">
+                <h1><a href="index.html">Okean Mobile</a></h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="events-container">
+        <div class="events-grid">
+            <div class="event-card">
+                <img src="picture/event1.jpg" alt="Event Image">
+                <div class="event-card-content">
+                    <h3>Smartphone Innovation Summit</h3>
+                    <div class="event-date">
+                        📅 August 15-16, 2024
+                    </div>
+                    <p class="event-details">Join us for a groundbreaking event showcasing the latest mobile technology innovations, featuring keynote speakers from top smartphone manufacturers.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="picture/event2.jpg" alt="Event Image">
+                <div class="event-card-content">
+                    <h3>5G Technology Expo</h3>
+                    <div class="event-date">
+                        📅 September 22-23, 2024
+                    </div>
+                    <p class="event-details">Explore the future of mobile connectivity with our comprehensive 5G technology exhibition and networking conference.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <img src="picture/event3.jpg" alt="Event Image">
+                <div class="event-card-content">
+                    <h3>Mobile Photography Workshop</h3>
+                    <div class="event-date">
+                        📅 October 5, 2024
+                    </div>
+                    <p class="event-details">Learn professional mobile photography techniques from industry experts and discover the latest camera technologies in smartphones.</p>
+                    <a href="#" class="register-btn">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

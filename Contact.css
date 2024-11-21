@@ -64,7 +64,7 @@ body::before {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: linear-gradient(45deg, #03e9f4, #00c6fb);
+  background: linear-gradient(45deg, #03e9f4, #0069C6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: transform 0.3s ease;
@@ -81,7 +81,7 @@ body::before {
 
 .btn {
   padding: 10px 20px;
-  background: linear-gradient(45deg, #03e9f4, #00c6fb);
+  background: linear-gradient(45deg, #03e9f4, #0069C6);
   border: none;
   color: #fff;
   border-radius: 25px;
@@ -115,7 +115,7 @@ body::before {
   font-size: 4rem;
   margin-bottom: 1.5rem;
   color: #03e9f4;
-  background: linear-gradient(45deg, #ffffff, #00c5fb);
+  background: linear-gradient(45deg, #ffffff, #0069C6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -179,7 +179,7 @@ textarea {
 
 .submit-btn {
   padding: 0.75rem 2rem;
-  background: linear-gradient(45deg, #03e9f4, #00c6fb);
+  background: linear-gradient(45deg, #03e9f4, #0069C6);
   color: white;
   border: none;
   border-radius: 25px;

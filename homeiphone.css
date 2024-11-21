@@ -62,6 +62,26 @@ header {
 .logo:hover {
     transform: scale(1.05);
 }
+.brand-name {
+    text-align: right;
+}
+
+.brand-name h1 {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.brand-name h1:hover {
+    transform: scale(1.05);
+}
 
 .Search {
     flex-grow: 1;
@@ -100,7 +120,7 @@ header {
 
 .header-button button {
     padding: 10px 20px;
-    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
     border: none;
     color: #fff;
     border-radius: 25px;
@@ -150,7 +170,7 @@ nav select:focus {
 
 .btn-android, .btn-iphone, .btn-shopping-card {
     padding: 10px 20px;
-    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
     border: none;
     color: #fff;
     border-radius: 25px;
@@ -216,7 +236,7 @@ nav select:focus {
 .product-card button {
     width: 100%;
     padding: 10px 20px;
-    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
     border: none;
     color: #fff;
     border-radius: 25px;
@@ -238,7 +258,7 @@ nav select:focus {
     bottom: 2rem;
     right: 2rem;
     padding: 15px 30px;
-    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
     border: none;
     color: #fff;
     border-radius: 25px;
@@ -287,7 +307,7 @@ nav select:focus {
 
 .footer-links h2 i {
     font-size: 1.2rem;
-    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -348,6 +368,7 @@ nav select:focus {
 }
 
 .social-icon {
+    text-decoration: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -368,7 +389,7 @@ nav select:focus {
 
 .social-icon:hover {
     transform: translateY(-3px);
-    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
     border-color: transparent;
     box-shadow: 0 5px 15px rgba(3, 233, 244, 0.3);
 }

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('isLoggedIn', 'true');
 
             // Redirect về trang chủ
-            window.location.href = 'home.html';
+            window.location.href = 'index.html';
         } else {
             // Hiển thị thông báo lỗi
             showErrorMessages();
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentUser = localStorage.getItem('currentUser');
         
         if (isLoggedIn === 'true' && currentUser) {
-            window.location.href = 'home.html';
+            window.location.href = 'index.html';
         }
     }
 

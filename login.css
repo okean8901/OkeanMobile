@@ -79,7 +79,7 @@ body::before {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -115,7 +115,7 @@ body::before {
     font-size: 32px;
     font-weight: 600;
     letter-spacing: 1px;
-    background: linear-gradient(45deg, #ffffff, #00c5fb);
+    background: linear-gradient(45deg, #ffffff, #0069C6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -201,7 +201,7 @@ body::before {
 .login-button {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(45deg, #03e9f4, #00c6fb);
+    background: linear-gradient(45deg, #03e9f4, #0069C6);
     border: none;
     border-radius: 25px;
     color: #fff;
@@ -215,7 +215,7 @@ body::before {
 }
 
 .login-button:hover {
-    background: linear-gradient(45deg, #00c6fb, #03e9f4);
+    background: linear-gradient(45deg, #00c6fb, #0069C6);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(3, 233, 244, 0.3);
 }

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okean Mobile - News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+    * {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        position: relative;
+        background: none;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('picture/backgoundasm.jpg') no-repeat center center fixed;
+        background-size: cover;
+        z-index: -1;
+        filter: brightness(0.8);
+    }
+
+    .site-header {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        border: 5px solid #03e9f4;
+        border-radius: 50%;
+        padding: 5px;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 50px;
+        max-width: 50px;
+        transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+        transform: scale(1.05);
+    }
+
+    .brand-name h1 {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: linear-gradient(45deg, #03e9f4, #0069C6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .brand-name h1:hover {
+    transform: scale(1.05);
+}
+
+    .news-container {
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 100px;
+        padding: 0 30px;
+    }
+
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .news-card {
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .news-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .news-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .news-card-content {
+        padding: 20px;
+        color: #fff;
+    }
+
+    .news-card-content h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        background: linear-gradient(45deg, #03e9f4, #0069C6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .news-card-content p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 15px;
+    }
+
+    .news-card-content .read-more {
+        display: inline-block;
+        color: #03e9f4;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .news-card-content .read-more:hover {
+        color: #00c6fb;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        .news-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="picture/logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="brand-name">
+                <h1><a href="index.html">Okean Mobile</a></h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="news-container">
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="picture/new1.jpg" alt="News Image">
+                <div class="news-card-content">
+                    <h3>Latest Smartphone Trends</h3>
+                    <p>Discover the most innovative mobile technologies and design trends shaping the future of smartphones.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="picture/new2.jpg" alt="News Image">
+                <div class="news-card-content">
+                    <h3>Upcoming Phone Releases</h3>
+                    <p>Get a sneak peek at the most anticipated smartphone models set to launch in the coming months.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="picture/new3.jpg" alt="News Image">
+                <div class="news-card-content">
+                    <h3>Battery Technology Breakthrough</h3>
+                    <p>Learn about the latest advancements in smartphone battery technology that promise longer life and faster charging.</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
