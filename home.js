@@ -1,20 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize cart in localStorage if it doesn't exist
+    // Khởi tạo giỏ hàng trong localStorage nếu chưa tồn tại
     if (!localStorage.getItem('cart')) {
         localStorage.setItem('cart', JSON.stringify([]));
     }
 
-    // Get all product cards and convert to array for sorting
+    // Lấy tất cả các thẻ sản phẩm và chuyển đổi thành mảng để sắp xếp
     const productContainer = document.querySelector('.main-content');
     const getProductCards = () => Array.from(document.querySelectorAll('.product-card'));
 
-    // Function to extract price from product card
+    // Hàm để lấy giá từ thẻ sản phẩm
     const getPrice = (productCard) => {
         const priceText = productCard.querySelector('div:nth-child(3)').textContent;
-        return parseInt(priceText.replace(/[^\d]/g, '')); // Remove non-digits and convert to number
+        return parseInt(priceText.replace(/[^\d]/g, '')); // Loại bỏ ký tự không phải số và chuyển đổi thành số
     };
 
-    // Sorting function
+    // Hàm sắp xếp sản phẩm
     const sortProducts = (direction) => {
         const productCards = getProductCards();
         
@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
             return direction === 'asc' ? priceA - priceB : priceB - priceA;
         });
 
-        // Clear and re-append sorted products
+        // Xóa và thêm lại các sản phẩm đã sắp xếp
         productContainer.innerHTML = '';
         productCards.forEach(card => productContainer.appendChild(card));
     };
 
-    // Search functionality
+    // Chức năng tìm kiếm
     const searchInput = document.querySelector('.Search input');
     const searchIcon = document.querySelector('.Search i');
 
@@ -48,17 +48,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // If no results found, show a message
+        // Nếu không tìm thấy kết quả, hiển thị thông báo
         const visibleCards = productCards.filter(card => card.style.display !== 'none');
         if (visibleCards.length === 0) {
             const noResultsMessage = document.createElement('div');
-            noResultsMessage.textContent = 'No products found';
+            noResultsMessage.textContent = 'Không tìm thấy sản phẩm';
             noResultsMessage.style.textAlign = 'center';
             noResultsMessage.style.width = '100%';
             noResultsMessage.style.padding = '20px';
             noResultsMessage.id = 'no-results-message';
             
-            // Remove any existing no results message
+            // Xóa thông báo không có kết quả nếu đã tồn tại
             const existingMessage = document.getElementById('no-results-message');
             if (existingMessage) {
                 existingMessage.remove();
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             productContainer.appendChild(noResultsMessage);
         } else {
-            // Remove no results message if it exists
+            // Xóa thông báo không có kết quả nếu có
             const existingMessage = document.getElementById('no-results-message');
             if (existingMessage) {
                 existingMessage.remove();
@@ -74,25 +74,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Add event listeners for search
+    // Thêm sự kiện cho tìm kiếm
     searchInput.addEventListener('input', performSearch);
     searchIcon.addEventListener('click', performSearch);
 
-    // Add event listener to sort select
+    // Thêm sự kiện cho select sắp xếp
     const sortSelect = document.querySelector('select[name="soft-by-price"]');
     sortSelect.addEventListener('change', (e) => {
         const direction = e.target.value === 'From low to high' ? 'asc' : 'desc';
         sortProducts(direction);
     });
 
-    // Update select options
+    // Cập nhật các tùy chọn cho select
     sortSelect.innerHTML = `
-        <option value="">Select sorting</option>
-        <option value="From high to low">From high to low</option>
-        <option value="From low to high">From low to high</option>
+        <option value="">Chọn sắp xếp</option>
+        <option value="From high to low">Từ cao đến thấp</option>
+        <option value="From low to high">Từ thấp đến cao</option>
     `;
 
-    // Add click event listeners to all BUY buttons
+    // Thêm sự kiện click cho tất cả các nút MUA
     const buyButtons = document.querySelectorAll('.product-card button');
     buyButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -104,23 +104,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 quantity: 1
             };
 
-            // Get existing cart
+            // Lấy giỏ hàng hiện tại
             const cart = JSON.parse(localStorage.getItem('cart'));
             
-            // Check if product already exists in cart
+            // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
             const existingProductIndex = cart.findIndex(item => item.name === product.name);
             
             if (existingProductIndex !== -1) {
-                cart[existingProductIndex].quantity += 1;
+                cart[existingProductIndex].quantity += 1; // Nếu có, tăng số lượng
             } else {
-                cart.push(product);
+                cart.push(product); // Nếu không, thêm sản phẩm mới vào giỏ hàng
             }
 
-            // Save updated cart
+            // Lưu giỏ hàng đã cập nhật
             localStorage.setItem('cart', JSON.stringify(cart));
             
-            alert('Product added to cart!');
-            window.location.href = 'mycart.html';
+            alert('Sản phẩm đã được thêm vào giỏ hàng!');
+            window.location.href = 'mycart.html'; // Chuyển hướng đến trang giỏ hàng
         });
     });
 });
