@@ -1,4 +1,3 @@
-// home.js
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize cart in localStorage if it doesn't exist
     if (!localStorage.getItem('cart')) {
@@ -30,6 +29,54 @@ document.addEventListener('DOMContentLoaded', () => {
         productContainer.innerHTML = '';
         productCards.forEach(card => productContainer.appendChild(card));
     };
+
+    // Search functionality
+    const searchInput = document.querySelector('.Search input');
+    const searchIcon = document.querySelector('.Search i');
+
+    const performSearch = () => {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const productCards = getProductCards();
+
+        productCards.forEach(card => {
+            const productName = card.querySelector('div:nth-child(2)').textContent.toLowerCase();
+            
+            if (productName.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // If no results found, show a message
+        const visibleCards = productCards.filter(card => card.style.display !== 'none');
+        if (visibleCards.length === 0) {
+            const noResultsMessage = document.createElement('div');
+            noResultsMessage.textContent = 'No products found';
+            noResultsMessage.style.textAlign = 'center';
+            noResultsMessage.style.width = '100%';
+            noResultsMessage.style.padding = '20px';
+            noResultsMessage.id = 'no-results-message';
+            
+            // Remove any existing no results message
+            const existingMessage = document.getElementById('no-results-message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+            
+            productContainer.appendChild(noResultsMessage);
+        } else {
+            // Remove no results message if it exists
+            const existingMessage = document.getElementById('no-results-message');
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+        }
+    };
+
+    // Add event listeners for search
+    searchInput.addEventListener('input', performSearch);
+    searchIcon.addEventListener('click', performSearch);
 
     // Add event listener to sort select
     const sortSelect = document.querySelector('select[name="soft-by-price"]');
