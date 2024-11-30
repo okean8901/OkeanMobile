@@ -87,9 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cập nhật các tùy chọn cho select
     sortSelect.innerHTML = `
-        <option value="">Chọn sắp xếp</option>
-        <option value="From high to low">Từ cao đến thấp</option>
-        <option value="From low to high">Từ thấp đến cao</option>
+        <option value="">Select sort</option>
+        <option value="From high to low">From high to low</option>
+        <option value="From low to high">From low to high</option>
     `;
 
     // Thêm sự kiện click cho tất cả các nút MUA

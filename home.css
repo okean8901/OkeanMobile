@@ -156,10 +156,15 @@ nav select {
     padding: 10px 20px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    color: #03e9f4;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+nav select option {
+    background-color: #1a1a1a; /* Dark background for options */
+    color: #03e9f4; /* Blue text color */
+    padding: 10px;
 }
 
 nav select:focus {
